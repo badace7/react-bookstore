@@ -1,14 +1,17 @@
-import React from 'react';
-import PrimarySearchAppBar from './pages/partials/Navbar/Navbar';
-import './App.css';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./Router"
+import Navbar from "./pages/partials/Navbar";
 
+
+import "./App.css";
 
 function App() {
   return (
-    <>
-      <PrimarySearchAppBar />
-      {/* <Pages /> */}
-    </>
+  <BrowserRouter>
+    <Navbar />
+    <AppRouter />
+  </BrowserRouter>
   );
 }
 

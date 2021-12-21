@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import { styled } from '@mui/material'
-
+import { Link } from 'react-router-dom';
 
 const StyledImg = styled('img')(({theme}) => ({
     width: "100px",
@@ -10,7 +10,7 @@ const StyledImg = styled('img')(({theme}) => ({
 export default function Logo(): ReactElement {
     return (
         <>
-            <a href="#"><StyledImg src={require("../img/bookstore.png")} alt=""/></a>
+            <Link to="/"><StyledImg src={require("../img/bookstore.png")} alt=""/></Link>
         </>
     )
 }

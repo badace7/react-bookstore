@@ -15,17 +15,18 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import {green} from "@mui/material/colors";
+import { green } from "@mui/material/colors";
 import Logo from "../../../components/Logo";
 import Cart from "../../../components/Cart";
 
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Link from "@mui/material/Link";
+// import Link from "@mui/material/Link";
+import { Link } from "react-router-dom";
 import Advertisement from "../../../components/Advertisement";
 
-const Navbar = styled("nav")(({ theme }) => ({
-  backgroundColor: green[100]
+const Nav = styled("nav")(({ theme }) => ({
+  backgroundColor: green[100],
 }));
 
 const Search = styled("div")(({ theme }) => ({
@@ -86,7 +87,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -187,67 +188,35 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Navbar
+    <Nav
     // sx={{ flexGrow: 1 }}
     >
-
-{/* <LinkContainer> */}
-
-
-{/* 
-<Router>
-15       <div>
-16         <nav>
-17           <ul>
-18             <li>
-19               <Link to="/">Home</Link>
-20             </li>
-21             <li>
-22               <Link to="/products/1">First Product</Link>
-23             </li>
-24             <li>
-25               <Link to="/products/2">Second Product</Link>
-26             </li>
-27           </ul>
-28         </nav>
-29 
-30         <Route path="/" exact component={<Home/>} />
-31         <Route path="/book" component={<BookPage/>} />
-32       </div>
-33     </Router> */}
-
-
-
-{/* </LinkContainer> */}
       <LinkContainer>
-      {/* <Link to="/book">
-          Book
-        </Link> */}
-
         <Logo />
         <Advertisement />
         <Cart />
-        <Link href="#" color="inherit">
+        <Link to="/" color="inherit">
           Account Management{" "}
         </Link>
-     
       </LinkContainer>
-
       <LinkContainer>
-        <Link href="#" color="inherit">
-          Genre
+        <Link to="/" color="inherit">
+          Home
         </Link>
-        <Link href="#" color="inherit">
-          What's New
+        <Link to="/book" color="inherit">
+          Book
         </Link>
-        <Link href="#" color="inherit">
+        {/* <Link to="/" color="inherit">
           What's Popular
         </Link>
-        <Link href="#" color="inherit">
+        <Link to="/" color="inherit">
           Bargain
         </Link>
-        <Link href="#" color="inherit">
+        <Link to="/" color="inherit">
           Gifts
+        </Link> */}
+        <Link to="/login" color="inherit">
+          Login
         </Link>
         <Search>
           <SearchIconWrapper>
@@ -259,9 +228,8 @@ export default function PrimarySearchAppBar() {
           />
         </Search>
       </LinkContainer>
-
       {renderMobileMenu}
       {renderMenu}
-    </Navbar>
+    </Nav>
   );
 }
